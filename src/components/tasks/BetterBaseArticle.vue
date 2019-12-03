@@ -1,19 +1,14 @@
 <template>
   <div class="base-article">
-    <header>{{item.time}} {{item.author}}</header>
+    <slot name="header">
+      <header>{{item.time}} {{item.author}}</header>
+    </slot>
     <section class="base-article__content">
       <div>{{item.description}}</div>
-      <div v-if="item.type==='Article'">{{ item.text}}</div>
-      <div v-if="item.type==='ImagePost'">
-        <img :src="item.imageUrl" />
-      </div>
-      <div v-if="item.type==='Article'">
-        <button @click="showMore = !showMore">Show more</button>
-        <div v-if="showMore">{{ item.showMoreContent}}</div>
-      </div>
+      <slot name="contentSlot" :item="item" :toggleShowMore="toggleShowMore" :shouldShow="shouldShow"></slot>
     </section>
     <footer class="base-article__footer">
-      <div v-if="item.type==='Event'" class="article__content--tags">{{ item.tags}}</div>
+      <slot name="footerSlot" :item="item">Default footer</slot>
     </footer>
   </div>
 </template>
@@ -21,9 +16,17 @@
 <script>
 export default {
   name: "BetterBaseArticle",
-   data: function () {
+  data: function() {
     return {
-      showMore: false,
+      showMore: false
+    };
+  },
+  methods:{
+    toggleShowMore(){
+      this.showMore = !this.showMore;
+    },
+    shouldShow(){
+      return this.showMore;
     }
   },
   props: {
