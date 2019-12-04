@@ -1,18 +1,18 @@
 <template>
   <div id="app">
-    <!-- <task1 /> -->
-    <better-task1 />
+    <task1 class="task1"/>
+    <!-- <better-task1 /> -->
   </div>
 </template>
 
 <script>
-import BetterTask1 from "./components/tasks/BetterTask1.vue";
-//import Task1 from "./components/Task1.vue";
+//import BetterTask1 from "./components/tasks/BetterTask1.vue";
+import Task1 from "./components/Task1.vue";
 export default {
   name: "app",
   components: {
-    BetterTask1,
-    //Task1
+    //BetterTask1,
+    Task1
   }
 };
 </script>
@@ -27,6 +27,7 @@ export default {
 }
 body {
   box-sizing: border-box;
+  background-color:#f3f6f8;
 }
 
 #app {
@@ -38,5 +39,8 @@ body {
   margin-top: 60px;
   display: flex;
   justify-content: center;
+}
+.task1 {
+  max-width:800px;
 }
 </style>
