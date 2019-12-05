@@ -2,37 +2,44 @@
   <div>
     <div>
       <input v-model="breed" class="input" type="text" />
-      <FetchData :url="url">
-        <template #loading="{isPending}">
-          <PulseLoader v-if="isPending" />
-        </template>
+      <template>
+        <PulseLoader v-if="isPending" />
+      </template>
 
-        <template #error="{ error, refresh }">
-          <div v-if="error">
-            {{ error }}
-            <button @click="refresh" class="refreshButton">Refresh!</button>
-          </div>
-        </template>
+      <template>
+        <div v-if="error">
+          {{ error }}
+          <button @click="refresh" class="refreshButton">Refresh!</button>
+        </div>
+      </template>
 
-        <template #default="{ data, isPending, error, refresh }">
-          <div v-if="!error && data">
-            <img :src="data.message" class="resultImage" />
-            <button @click="refresh" class="refreshButton">Refresh!</button>
-          </div>
-        </template>
-      </FetchData>
+      <template>
+        <div v-if="!error">
+          <img :src="data.message" class="resultImage" />
+          <button @click="refresh" class="refreshButton">Refresh!</button>
+        </div>
+      </template>
     </div>
   </div>
 </template>
 
 <script>
-import FetchData from "./FetchData";
 import PulseLoader from "vue-spinner/src/PulseLoader";
+import useFetchData from "./useFetchData";
+import { computed, ref } from "@vue/composition-api";
 
 export default {
   components: {
-    FetchData,
     PulseLoader
+  },
+  setup() {
+    const breed = ref("collie/border");
+    const url = computed(
+      () => `https://dog.ceo/api/breed/${breed.value}/images/random`
+    );
+
+    const { isPending, error, refresh, data } = useFetchData(url, 100);
+    return { breed, error, data, isPending, refresh };
   },
   data() {
     return {

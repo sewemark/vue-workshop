@@ -7,7 +7,7 @@
       <!-- Your solutions -->
       <router-link to="/task1Solution" class="routerLink">Task1Solution</router-link>
       <!-- <router-link to="/task2Solution" class="routerLink">Task2Solution</router-link> -->
-      <!-- <router-link to="/task5Solution" class="routerLink">Task5Solution</router-link> -->
+      <router-link to="/task5Solution" class="routerLink">Task5Solution</router-link>
     </nav>
     <router-view />
   </div>
