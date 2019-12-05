@@ -12,13 +12,13 @@
         <div v-if="showMore">{{ item.showMoreContent}}</div>
       </div>
     </section>
-    <a v-bind:href="url" class="nav-link">
+    <a class="nav-link">
       <slot></slot>
     </a>
-    <navigation-link url="/profile">
+    <div>
       <span class="fa fa-user"></span>
       Your Profile
-    </navigation-link>
+    </div>
     <footer class="base-article__footer">
       <div v-if="item.type==='Event'" class="article__tags">
         <p class="tag" v-for="(tag, index) in item.tags" v-bind:key="index">{{tag}}</p>

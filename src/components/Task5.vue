@@ -15,7 +15,7 @@
         </template>
 
         <template #default="{ data, isPending, error, refresh }">
-          <div v-if="!error">
+          <div v-if="!error && data">
             <img :src="data.message" class="resultImage" />
             <button @click="refresh" class="refreshButton">Refresh!</button>
           </div>
