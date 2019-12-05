@@ -1,22 +1,21 @@
 <template>
   <div id="app">
-<!--    <task1 class="task1"/>-->
-    <!-- <better-task1 /> -->
-    <task5 />
+    <nav>
+      <router-link to="/task1" class="routerLink">Task1</router-link>
+      <router-link to="/task2" class="routerLink">Task2</router-link>
+      <router-link to="/task5" class="routerLink">Task5</router-link>
+      <!-- Your solutions -->
+      <!-- <router-link to="/task1Solution" class="routerLink">Task1Solution</router-link>
+      <router-link to="/task2Solution" class="routerLink">Task2Solution</router-link>
+      <router-link to="/task5Solution" class="routerLink">Task5Solution</router-link>-->
+    </nav>
+    <router-view />
   </div>
 </template>
 
 <script>
-//import BetterTask1 from "./components/tasks/BetterTask1.vue";
-//import Task1 from "./components/Task1.vue";
-import Task5 from "./components/Task5.vue";
-
 export default {
-  name: "app",
-  components: {
-    //BetterTask1,
-    Task5
-  }
+  name: "app"
 };
 </script>
 
@@ -30,7 +29,7 @@ export default {
 }
 body {
   box-sizing: border-box;
-  background-color:#f3f6f8;
+  background-color: #f3f6f8;
 }
 
 #app {
@@ -41,9 +40,11 @@ body {
   color: #2c3e50;
   margin-top: 60px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
-.task1 {
-  max-width:800px;
+.routerLink {
+  margin-left: 20px;
 }
 </style>

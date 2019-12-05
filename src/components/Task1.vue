@@ -1,24 +1,29 @@
 <template>
-    <div>
-    <base-article :item="articles.imageItems[0]"  />
+  <div class="task1">
+    <base-article :item="articles.imageItems[0]" />
     <base-article :item="articles.articleItems[0]" />
     <base-article :item="articles.eventItems[0]" />
-    </div>
+  </div>
 </template>
 
 <script>
-import BaseArticle from './BaseArticle';
-import mockedArticles from '../services/mockedArticles';
+import BaseArticle from "./BaseArticle";
+import mockedArticles from "../services/mockedArticles";
 
 export default {
-  name: 'Task1',
-  data () {
+  name: "Task1",
+  data() {
     return {
-      articles:mockedArticles,
-    }
+      articles: mockedArticles
+    };
   },
-  components:{
-    BaseArticle,
-  },
-}
+  components: {
+    BaseArticle
+  }
+};
 </script>
+<style lang="scss">
+.task1 {
+  max-width: 800px;
+}
+</style>
