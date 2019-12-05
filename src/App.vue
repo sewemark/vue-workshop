@@ -5,9 +5,9 @@
       <router-link to="/task2" class="routerLink">Task2</router-link>
       <router-link to="/task5" class="routerLink">Task5</router-link>
       <!-- Your solutions -->
-      <!-- <router-link to="/task1Solution" class="routerLink">Task1Solution</router-link>
-      <router-link to="/task2Solution" class="routerLink">Task2Solution</router-link>
-      <router-link to="/task5Solution" class="routerLink">Task5Solution</router-link>-->
+      <router-link to="/task1Solution" class="routerLink">Task1Solution</router-link>
+      <!-- <router-link to="/task2Solution" class="routerLink">Task2Solution</router-link> -->
+      <!-- <router-link to="/task5Solution" class="routerLink">Task5Solution</router-link> -->
     </nav>
     <router-view />
   </div>
