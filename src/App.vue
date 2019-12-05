@@ -1,18 +1,21 @@
 <template>
   <div id="app">
-    <task1 class="task1"/>
+<!--    <task1 class="task1"/>-->
     <!-- <better-task1 /> -->
+    <task5 />
   </div>
 </template>
 
 <script>
 //import BetterTask1 from "./components/tasks/BetterTask1.vue";
-import Task1 from "./components/Task1.vue";
+//import Task1 from "./components/Task1.vue";
+import Task5 from "./components/Task5.vue";
+
 export default {
   name: "app",
   components: {
     //BetterTask1,
-    Task1
+    Task5
   }
 };
 </script>
