@@ -1,24 +1,8 @@
-# vue-workshop
+Task 1
+Refactor Task1.vue and BaseArticle.vue to use slot instead of many conditionals rendering.
 
-## Project setup
-```
-yarn install
-```
+Task 2
+Refactor Task1.vue and BaseArticle.vue to use dynamic component rendering based on article type. Create separate component for each article type.
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Task5 
+Refactor Task5.vue, move logic from FetchData component into useFetchData composition api. As a result you should get rid of FetchData component.
